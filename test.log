@@ -1,0 +1,5 @@
+2017-08-04 09:54:13,452log.py[line:21DEBUGdebug message]
+2017-08-04 09:54:13,452log.py[line:22INFOinfo message]
+2017-08-04 09:54:13,452log.py[line:23WARNINGwarning message]
+2017-08-04 09:54:13,452log.py[line:24ERRORerror message]
+2017-08-04 09:54:13,452log.py[line:25CRITICALcritical message]

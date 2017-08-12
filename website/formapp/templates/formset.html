@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Formset</title>
+  </head>
+  <body>
+    随便写些啥子咯！
+    <h1>Form test 1</h1>
+    <!-- {{a}}和{{b}}的作用，传递参数 -->
+    <h3>{{a}}</h3>
+    <h2>{{b}}</h2>
+    <form class="" action="" method="post">
+      <!-- {%csrf_token%} :用来使浏览器不拒绝访问 -->
+      {%csrf_token%}
+      {%for field in form%}
+      <div>
+        <!-- label 为标签名称，{{field}}是用来添加文本框的。 -->
+        {{field.label}}:{{field}}
+        {{field.errors}}
+      </div>
+      {%endfor%}
+      <div class="fieldWrapper">
+        <p><input type="submit" value="留言"></p>
+      </div>
+    </form>
+  </body>
+</html>

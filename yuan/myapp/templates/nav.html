@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>include test</title>
+  </head>
+  <body>
+    {%include "include.html"%}
+    <a href="{%url 'base'%}">菜鸟</a>
+    <!--后面三行调用了全局变量，
+    、复制这三行到任意一个html中都可以使用全局变量-->
+    <p>{{NAME}}</p>
+    <p>{{TEL}}</p>
+    <p>{{GEYAN}}</p>
+  </body>
+</html>

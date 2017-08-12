@@ -11,7 +11,6 @@
 #     print (a)
 # fun_out()
 
-
 #闭包
 # def out():
 #     a = 1
@@ -243,7 +242,7 @@
 #         print("__next__")
 #         self.a += 1
 #         return self.a ** 2
-#
+
 # a = TestIter(2)
 # print ("-----------")
 # print (next(a))   #输出为 9
@@ -259,17 +258,321 @@
 # for i in fib(20):
 #     print (i)
 
-class MyError(Exception):
-    # s = 5
-    pass
 
-try:
-    s = None
-    if s is  None:
-        print ("s 是空对象")
-        #如果引发MyError异常，后面的代码将不能执行
-        raise MyError("附加异常信息")
-    print (len(s))
-except MyError as X:
-    print ("空对象没有长度")
-    print(X.args)
+# class MyError(Exception):
+#     # s = 5
+#     pass
+#
+# try:
+#     s = None
+#     if s is  None:
+#         print ("s 是空对象")
+#         #如果引发MyError异常，后面的代码将不能执行
+#         raise MyError("附加异常信息")
+#     print (len(s))
+# except MyError as X:
+#     print ("空对象没有长度")
+#     print(X.args)
+
+#!/usr/bin/python
+#with ...as 函数
+# class test():
+#     def fun(self):
+#         print "44444"
+#     def __enter__(self):
+#         print("enter....")
+#         # return "1"
+#     def __exit__(self,type,value,traceback):
+#         print("exit...")
+#         # return "3"
+# a = test()
+#
+#
+# with test() as f:
+#     print("doing something")
+#     print "================="
+#     print f
+#     a.fun()
+
+# 链表
+class Node(object):
+    def __init__(self, val, next = None):
+        self.val = val
+        self.next = next
+
+class LinkList(object):
+    def __init__(self):
+        self.head = None
+    def __getitem__(self, key):
+        if self.is_empty():
+            print("linklist is empty")
+            return
+        elif key < 0 or key > self.self.getlength():
+            print("the given key is error")
+            return
+        else:
+            return self.getitem(key)
+
+    def __setitem__(self, key, value):
+        if self.is_empty():
+            print("linklist is empty")
+            return
+        elif key < 0 or key > self.self.getlength():
+            print("the given key is error")
+            return
+        else:
+            self.delete(key)
+            return self.insert(key)
+
+#链表的初始化
+    def initlist(self, data):
+        self.head = Node(0)
+        p = self.head
+        for i in data:
+            node = node(i)
+            p.next = node
+            p = p.next
+#遍历链表
+    def show(self):
+        p = self.head.next
+        while p != None:
+            print(p.val, " ", end == " ")
+            p = p.next
+        print ("this is show .")
+
+    def getlength(self):
+        p = self.head
+        length = 0
+        while p.next != None:
+            length += 1
+            p = p.next
+        return length
+
+    def is_empty(self):
+        if self.getlength() == 0:
+            return True
+        else:
+            return False
+    def clear(self):
+        self.head = None
+
+    def append(self, item):  #在链表尾部增加节点
+        p = self.head
+        q = Node(item)
+        while p.next != None:
+            p = p.next
+        p.next = q
+
+    def getitem(self, index):     #获取某个位置节点的值
+        if self.is_empty():
+            print("link is empty")
+            return
+        i = 0
+        p = self.head.next
+        while p !=  None and j < index :
+            j += 1
+            p = p.next
+        if p == None:
+            print("target is not exist.")
+        else:
+            return p.val
+
+    def insert(sert, index, item):
+        if self.is_empty() or index < 0 or index > self.getlength():
+            print ("index is error")
+            return
+        p = self.head
+        j = 0
+
+        while p.next != None and j < index:
+            p = p.next
+            j += 1
+        q = Node(item, p)
+        q.next = p.next
+        p.next = q
+
+#删除某个位置的元素
+    def delete(self, index):
+        if self.is_empty() or index < 0 or index >self.getlength():
+            print ("linklist is empty")
+            return
+        p = self.head
+        j = 0
+        while p.next != None and j < index:
+            p = p.next
+            j += 1
+        if p.next == None:
+            print ("index is error")
+        else:
+            p.next = p.next.next
+
+    def index(self,value):  #查找操作，返回相应位置
+        if self.is_empty():
+            print ("linklist is empty")
+            return
+        p = self.head.next
+        i += 1
+        while p != None and not (p.val ==value):
+            p = p.next
+            i += 1
+        if p == None:
+            return -1
+        else:
+            return i
+show()
+'''
+#!/usr/bin/python
+
+class Node(object):
+    def __init__(self,val,next = None):
+        self.val = val
+        self.next = next
+
+class LinkList(object):
+    def __init__(self):
+        self.head = None
+
+    def __getitem__(self,key):
+        if self.is_empty():
+            print('linklist is empty')
+            return
+        elif key < 0 or key > self.self.getlength():
+            print('the given key is error')
+            return
+        else:
+            return self.getitem(key)
+
+    def __setitem__(self,key,value):
+        if self.is_empty():
+            print('link is empty')
+            return
+        elif key < 0 or key > self.self.getlength():
+            print('the given key is error')
+            return
+        else:
+            self.delete(key)
+            return self.insert(key)
+
+# 链表的初始化
+
+    def initlist(self,data):
+        self.head = Node(0)
+
+        p = self.head
+
+        for i in data:
+            node = Node(i)
+            p.next = node
+            p = p.next
+
+#遍历链表
+    def show(self):
+        p = self.head.next
+
+        while p != None:
+            print(p.val,' ',end = '')
+            p = p.next
+        print()
+
+# 获取链表长度
+
+    def getlength(self):
+        p = self.head
+        length = 0
+        while p.next != None:
+            length += 1
+            p = p.next
+
+        return length
+
+# 判断链表是否为空
+
+    def is_empty(self):
+        if self.getlength() == 0:
+            return True
+        else:
+            return False
+
+#清空
+    def clear(self):
+        self.head = None
+
+#在链表尾部增加节点
+
+    def append(self,item):
+        p = self.head
+        q = Node(item)
+        while p.next != None:
+            p = p.next
+        p.next = q
+
+#获取某个位置节点的值
+
+    def getitem(self,index):
+        if self.is_empty():
+            print('link is empty')
+            return
+        j = 0
+        p = self.head.next
+        while p != None and j < index:
+           j += 1
+           p = p.next
+
+        if p == None:
+            print('target is not exist')
+        else:
+            return p.val
+
+# 在某个位置插入节点
+
+    def insert(self,index,item):
+        if self.is_empty() or index < 0 or index > self.getlength():
+            print('index is error')
+            return
+
+        p = self.head
+        j = 0
+
+        while p.next != None and j < index:
+            p = p.next
+            j += 1
+
+        q = Node(item,p)
+        q.next = p.next
+        p.next = q
+
+# 删除某个位置的元素
+
+    def delete(self,index):
+        if self.is_empty() or index < 0 or index > self.getlength():
+            print('Linklist is empty')
+            return
+
+        p = self.head
+        j = 0
+        while p.next != None and j < index:
+            p = p.next
+            j += 1
+
+        if p.next == None:
+            print('indes is error')
+        else:
+            p.next = p.next.next
+
+# 查找操作，返回相应位置
+
+    def index(self,value):
+        if self.is_empty():
+            print('Linklist is empty')
+            return
+        p = self.head.next
+        i = 0
+        while p != None and not (p.val == value):
+            p = p.next
+            i += 1
+
+        if p == None:
+            return -1
+        else :
+            return i
+'''

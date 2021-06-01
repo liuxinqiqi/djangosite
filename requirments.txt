@@ -23,5 +23,5 @@ requests==2.18.3
 simplegeneric==0.8.1
 unity-lens-photos==1.0
 unrar==0.3
-urllib3==1.22
+urllib3==1.26.5
 yarg==0.1.9

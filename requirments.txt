@@ -13,7 +13,7 @@ mysqlclient==1.3.7
 olefile==0.44
 pep8==1.7.0
 pexpect==4.0.1
-Pillow==4.2.1
+Pillow==8.2.0
 pipreq==0.4
 pipreqs==0.4.9
 ptyprocess==0.5
